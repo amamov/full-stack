@@ -8,6 +8,6 @@ PACKAGE_VERSION=$(cat package.json \
   | tr -d '[[:space:]]')
 
 echo "Docker Image Version : "$PACKAGE_VERSION
-docker build -t "maromav/trymake":$PACKAGE_VERSION .
-docker push "maromav/trymake":$PACKAGE_VERSION
-docker rmi "maromav/trymake":$PACKAGE_VERSION
+docker build -t ".../...":$PACKAGE_VERSION .
+docker push ".../...":$PACKAGE_VERSION
+docker rmi ".../...":$PACKAGE_VERSION
