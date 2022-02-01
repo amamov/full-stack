@@ -1,0 +1,45 @@
+@import "./reset.css";
+
+/* @font-face {
+  font-family: "helvetica";
+  src: url("../public/fonts/helvetica/Helvetica.ttf")
+    format("embedded-opentype");
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+} */
+
+:root {
+  --font-helvetica: "helvetica";
+  --layout-padding-x: 30px;
+}
+
+* {
+  box-sizing: border-box;
+  text-size-adjust: none;
+}
+html,
+body {
+  font-family: var(--font-helvetica), var(--font-notosans-regular);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.8;
+}
+
+#__next::-webkit-scrollbar {
+  display: none;
+}
+
+.image-lazy-load-child-full > img {
+  width: 100%;
+  height: 100%;
+}

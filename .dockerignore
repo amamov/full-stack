@@ -1,0 +1,11 @@
+node_modules
+.next
+.idea
+.vscode
+.github
+.eslintrc.js
+.prettierrc
+cypress.json
+.gitignore
+.gitattributes
+.babelrc
