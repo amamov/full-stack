@@ -1,5 +1,6 @@
 import { signOut, useSession } from "next-auth/react"
 import useSWR from "swr"
+import { useForm } from "react-hook-form"
 import { getFetcher } from "@lib/client/fetcher"
 import Layout from "@components/layout/default/Layout"
 import { ResponseDataDto } from "./api/hello"
@@ -9,9 +10,15 @@ import {
   unauthenticated,
 } from "@lib/client/constant/sessionStatus"
 
+type FormData = {
+  firstName: string
+  gender: string
+}
+
 export default function Page() {
   const { data: session, status } = useSession()
   const { data: helloData } = useSWR<ResponseDataDto>("/api/hello", getFetcher)
+  const { register, handleSubmit } = useForm<FormData>()
 
   return (
     <Layout>
@@ -37,6 +44,16 @@ export default function Page() {
       <div>
         <a href={`/mobx`}>mobx (should login)</a>
       </div>
+
+      <form onSubmit={handleSubmit((data: FormData) => console.log(data))}>
+        <input {...register("firstName")} />
+        <select {...register("gender")}>
+          <option value="female">female</option>
+          <option value="male">male</option>
+          <option value="other">other</option>
+        </select>
+        <input type="submit" />
+      </form>
     </Layout>
   )
 }
