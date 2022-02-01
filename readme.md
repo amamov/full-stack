@@ -5,7 +5,6 @@
 ## Tech Stack
 
 - Typescript
-- PostgreSQL
 - [NEXT.js](https://nextjs.org/)
 - [Prisma](https://www.prisma.io/docs/concepts/overview/why-prisma)
 - [next-api-decorators](https://github.com/storyofams/next-api-decorators)
